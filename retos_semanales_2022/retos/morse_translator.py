@@ -35,7 +35,6 @@ def getWikiMorseCodes(wiki_url: str = URL) -> dict:
                 " ", "").replace("·", ".").replace("—", "_"))
 
         natural_dictionary = {char: code for char, code in zip(characters, codes)}
-        print(natural_dictionary)
         return natural_dictionary
     except Exception:
         return {
