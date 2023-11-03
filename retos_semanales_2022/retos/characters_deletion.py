@@ -13,3 +13,4 @@ def delChars(str_1: str, str_2: str) -> None:
 
 if __name__ == "__main__":
     delChars("hola", "mundo")
+
