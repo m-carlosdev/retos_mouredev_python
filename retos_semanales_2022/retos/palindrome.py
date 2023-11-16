@@ -21,6 +21,7 @@ def isPalindrome(text: str) -> bool:
 
     return (reversed_word == formatted_text)
 
+
 if __name__ == "__main__":
     texto = "Ána lleva al oso la avellana."
     texto2 = "hola mundo"
