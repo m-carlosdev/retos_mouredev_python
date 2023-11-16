@@ -5,7 +5,18 @@
 #  * - NO hace falta comprobar que ambas palabras existan.
 #  * - Dos palabras exactamente iguales no son anagrama.
 
-def isAnagram(word_1: str, word_2: str) -> bool:
-    if (word_1 == word_2):
+import re
+import unicodedata
+
+def text_formatter(text: str) -> str:
+    formatted_text = re.sub(r"\W", "", text).lower()
+    formatted_text = unicodedata.normalize("NFKD", formatted_text).encode('ascii', 'ignore').decode('utf-8', 'ignore')
+    return formatted_text
+
+def isAnagram(text_1: str, text_2: str) -> bool:
+    if (text_1 == text_2):
         return False
-    return sorted(str(word_1)) == sorted(str(word_2))
+    text_1 = text_formatter(text_1)
+    text_2 = text_formatter(text_2)
+
+    return sorted(str(text_1)) == sorted(str(text_2))
